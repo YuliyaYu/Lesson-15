@@ -1,0 +1,72 @@
+<!DOCUMENT html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+
+</head>
+
+<body>
+
+    <div class="ex1">
+        <!--вывести элементы массива в списке ol, чтобы каждый элемент массива находился в отдельном li -->
+        <h3>Ukrainian biggest cities:</h3>
+        <p id="cities"></p>
+        <script>
+            var names, text, aleng, i;
+
+            var names = ['Kyiv', 'Dnepr', 'Kherson', 'Odessa', 'Kharkiv', 'Donetsk', 'Lviv'];
+            aleng = names.length;
+            text = "<ol>";
+            for (i = 0; i < aleng; i++) {
+                text += "<li>" + names[i] + "</li>";
+            }
+            text += "</ul>";
+            document.getElementById("cities").innerHTML = text;
+
+        </script>
+    </div>
+
+    <div class="ex2">
+        <!--перечислить в строке названия фруктов, разделяя их при помощи знака ; преобразовать строку в массив методом split(); вывести элементы массива в списке ul,каждый элемент массива в отдельном li.-->
+        <h3>Fruits</h3>
+        <p id="fruits"></p>
+        <script>
+            var arr, text, alen, i;
+            var fruits = 'banana; apricot; orange; apple; starfruit';
+            var arr = fruits.split('; ');
+            alen = arr.length;
+            text = "<ul>";
+            for (i = 0; i < alen; i++) {
+                text += "<li>" + arr[i] + "</li>";
+            }
+            text += "</ul>"
+            document.getElementById("fruits").innerHTML = text;
+
+        </script>
+    </div>
+    <div class="ex3">
+        <!--спрашивать у пользователя ввести бесконечное кол-во раз ключевые слова. Если человек закончил вводить их, мы обрываем цикл. После этого, преобразовываем все введенные слова в массив данных, сортируем по алфавиту и выводим в виде списка в HTML.-->
+        <h3>Замучить пользователя</h3>
+
+        <script>
+            var fruits = ['рамбутан', 'канистель'];
+            while (true) {
+                var pushed = fruits.push(prompt("Введите название фрукта"));
+                var i = fruits.length;
+                console.log(fruits);
+                if (i == 5 || i == null) {
+                    break;
+                }
+            }
+            fruits.sort();
+            document.write(fruits);
+
+        </script>
+    </div>
+
+
+</body>
+
+</html>
