@@ -49,23 +49,26 @@
     <div class="ex3">
         <!--спрашивать у пользователя ввести бесконечное кол-во раз ключевые слова. Если человек закончил вводить их, мы обрываем цикл. После этого, преобразовываем все введенные слова в массив данных, сортируем по алфавиту и выводим в виде списка в HTML.-->
         <h3>Замучить пользователя</h3>
-
+        <ol>
         <script>
-            var fruits = ['рамбутан', 'канистель'];
+            var string = '';
             while (true) {
-                var pushed = fruits.push(prompt("Введите название фрукта"));
-                var i = fruits.length;
-                console.log(fruits);
-                if (i == 5 || i == null) {
+                var tempString = (prompt("Введите название фрукта", ''));
+                string = string + ', ' + tempString;
+                console.log(string);
+                if (tempString == null || tempString == '') {
                     break;
                 }
             }
-            fruits.sort();
-            for (var i = 0; i < fruits.length; i++) {
-                document.write('<li>' + fruits[i] + '</li>');
+            string = string.split(',');
+            string.sort();
+            for (var i = 1; i < (string.length-1); i++) {
+
+                document.write('<li>' + string[i] + '</li>');
             }
 
         </script>
+        </ol>
     </div>
 
 
